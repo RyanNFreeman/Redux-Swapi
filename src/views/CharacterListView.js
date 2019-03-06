@@ -32,15 +32,18 @@ class CharacterListView extends React.Component {
 // the characters and the fetching boolean
 
 
-const mapStateToProps = state => ({
-  characters: state.charsReducer.characters,
-  error: state.charsReducer.error,
-  fetching: state.charsReducer.fetching
-})
+const mapStateToProps = state => {
+  return {
+    characters: state.charsReducer.characters,
+    error: state.charsReducer.error,
+    fetching: state.charsReducer.fetching}
+}
 
 export default connect(
-  mapStateToProps /* mapStateToProps replaces null here */,
-  { getCharacters
-    /* action creators go here */
-  }
+  mapStateToProps,
+  { getCharacters } 
 )(CharacterListView);
+
+/* mapStateToProps replaces null here */
+/* action creators go here */
+

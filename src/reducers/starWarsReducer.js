@@ -18,12 +18,12 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_ACTION_SUCCESS:
       return {
         ...state,
+        characters: [...state.characters, ...action.payload],
         fetching: false, error: action.payload
       }
     case FETCH_ACTION_FAILURE: 
       return {
         ...state,
-        characters: [...state.characters, ...action.payload],
         fecthing: false
       }
     
